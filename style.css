@@ -16,7 +16,152 @@ h2,
 h3,
 h4,
 h5,
-h6,
-p {
+h6 {
     margin-top: 0;
+    font-family: var(--rubik);
+    color: var(--dark-blue);
+    font-weight: 500;
+}
+
+p {
+    line-height: 1.5;
+    color: var(--gray-blue);
+    margin-top: 0;
+    font-family: var(--rubik);
+}
+
+button {
+    padding: .5rem 1rem;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: .6rem;
+}
+
+.btn--main {
+    background-color: var(--soft-blue);
+    color: white;
+    border: 1px solid var(--soft-blue);
+}
+
+.btn--light {
+    background-color: white;
+    color: var(--dark-blue);
+}
+
+.btn--alt {
+    background-color: var(--soft-red);
+    color: white;
+}
+
+/* -- Hero -- */
+
+.hero {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero__image {
+    max-width: 100%;
+}
+
+.hero__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero__heading {
+    text-align: center;
+    color: var(--dark-blue);
+}
+
+.hero__text {
+    text-align: center;
+    color: var(--gray-blue);
+    margin-bottom: 2rem;
+}
+
+.button__container {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+/* -- Features -- */
+
+
+
+
+/* -- Extension -- */
+
+.extension {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.extension__card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.extension__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    border: 1px solid rgba(145, 148, 161, 0.1);
+    border-radius: 8px;
+    box-shadow: 5px 5px 3px 0 rgba(145, 148, 161, 0.2);
+}
+
+.extension__card-image {
+    --image-size: 100px;
+    height: var(--image-size);
+    width: var(--image-size);
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+.extension__card-heading {
+    margin-bottom: .5rem;
+}
+
+.extension__card-text {
+    font-size: 14px;
+    margin-bottom: 2rem;
+}
+
+/* TODO - figure out how to make the dotted spacing work */
+.extension__card-button-container { 
+    background-image: linear-gradient(to right, var(--gray-blue) 10%, rgba(255, 255, 255, 0) 0%);
+    background-position: top;
+    background-size: 10px 5px;
+    background-repeat: repeat-x;
+    width: 100%;
+    padding: 1rem 1rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.extension__card-button-container .btn--main {
+    width: 100%;
+    padding: .75rem;
+}
+
+/* -- FAQ -- */
+
+
+
+/* -- CTA -- */
+
+
+
+/* -- Footer -- */
+
+footer {
+    background-color: var(--dark-blue);
 }
