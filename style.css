@@ -59,14 +59,9 @@ button {
 }
 
 section {
-    --spacing: 5rem;
-    /* margin-top: var(--spacing);
-    margin-bottom: var(--spacing);
-    max-width: 90%;
-    margin-left: auto;
-    margin-right: auto; */
-    padding-top: var(--spacing);
-    padding-bottom: var(--spacing);
+    --section-spacing: 5rem;
+    --x-padding: 1.5rem;
+    padding: var(--section-spacing) var(--x-padding);
 }
 
 /* -- Hero -- */
@@ -214,6 +209,53 @@ button[aria-selected="true"] {
 
 /* -- FAQ -- */
 
+
+.faq__accordion-button {
+    border: none;
+    border-bottom: 1px solid var(--gray-blue);
+    padding: 1rem 0;
+    text-align: left;
+    width: 100%;
+    background-color: white;
+    border-radius: 0;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--dark-blue);
+    margin-bottom: 1rem;
+}
+
+.faq__accordion-button:after {
+    content: url('/images/icon-arrow.svg');
+    font-size: 15px;
+    color: black;
+    float: right;
+    padding-right: 1rem;
+}
+
+.faq__accordion-button--active {
+    color: var(--soft-red);
+}
+
+.faq__accordion-button--active:after {
+    content: url('/images/icon-close.svg');
+    font-size: 15px;
+    stroke: black;
+}
+
+/* TODO - can you color svg when it's in <object>? */
+.faq__accordion-button object{
+    stroke: black;
+}
+
+.faq__accordion-panel {
+    border-bottom: 1px solid var(--gray-blue);
+    display: none;
+    transition: max-height 0.2s ease-out;
+}
+
+.faq__accordion-panel p {
+    line-height: 35px;
+}
 
 
 /* -- CTA -- */
