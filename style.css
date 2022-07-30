@@ -11,6 +11,10 @@ html {
     font-size: 18px;
 }
 
+body {
+    margin: 0;
+}
+
 h1,
 h2,
 h3,
@@ -51,6 +55,18 @@ button {
 .btn--alt {
     background-color: var(--soft-red);
     color: white;
+    border: 1px solid var(--soft-red);
+}
+
+section {
+    --spacing: 5rem;
+    /* margin-top: var(--spacing);
+    margin-bottom: var(--spacing);
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto; */
+    padding-top: var(--spacing);
+    padding-bottom: var(--spacing);
 }
 
 /* -- Hero -- */
@@ -90,7 +106,51 @@ button {
 
 /* -- Features -- */
 
+.features__content {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
 
+.features__tablist {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin-bottom: 5rem;
+}
+
+button[role="tab"] {
+    background-color: transparent;
+    border-top: none;
+    border-bottom: 1px solid var(--gray-blue);
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+    padding: 1rem 0;
+    font-size: 18px;
+    color: var(--dark-blue);
+}
+
+/* TODO - may need to put buttons in div, then use red border on bottom of button with the full-width gray border on the div */
+button[aria-selected="true"] {
+    border-bottom-color: var(--soft-red);
+}
+
+.features__tablist:first-child {
+    border-top: 1px solid var(--gray-blue);
+}
+
+.features__tabpanel {
+    text-align: center;
+}
+
+.features__tab-image {
+    max-width: 100%;
+    margin-bottom: 3rem;
+}
+
+.features__tabpanel button {
+    visibility: hidden;
+}
 
 
 /* -- Extension -- */
@@ -158,10 +218,85 @@ button {
 
 /* -- CTA -- */
 
+.cta {
+    background-color: var(--soft-blue);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cta__sub-heading {
+    color: white;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 3.25px;
+}
+
+.cta__heading {
+    color: white;
+    text-align: center;
+}
+
+.cta__contact-container {
+    max-width: 90%;
+}
+
+.cta__input {
+    width: calc(100% - 20px);
+    height: 40px;
+    border: 1px solid white;
+    border-radius: 4px;
+    padding-left: 20px;
+    margin-bottom: 1rem;
+}
+
+.cta__contact-container button {
+    width: 100%;
+    height: 43px;
+    font-size: 14px;
+}
 
 
 /* -- Footer -- */
 
 footer {
     background-color: var(--dark-blue);
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer__logo path:first-child {
+    fill: #fff;
+}
+
+.footer__navbar-wrapper {
+    margin: 2rem 0;
+}
+
+.footer__navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer__navbar-item {
+    padding: .5rem;
+    text-align: center;
+}
+
+.footer__navbar-link {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: var(--rubik);
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 3px;
+}
+
+.footer__social-icon:first-of-type {
+    margin-right: 2rem;
 }

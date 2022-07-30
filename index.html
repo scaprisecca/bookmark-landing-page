@@ -25,9 +25,9 @@
 
     <nav class="navbar__wrapper">
       <ul class="navbar">
-        <li class="navbar__item"><a href="#" class="navbar__link">Features</a></li>
+        <li class="navbar__item"><a href="#features" class="navbar__link">Features</a></li>
         <li class="navbar__item"><a href="#" class="navbar__link">Pricing</a></li>
-        <li class="navbar__item"><a href="#" class="navbar__link">Contact</a></li>
+        <li class="navbar__item"><a href="#contact" class="navbar__link">Contact</a></li>
       </ul>
       <button class="btn--alt">Login</button>
     </nav>
@@ -50,25 +50,53 @@
 
   </section>
 
-  <section class="features">
+  <section class="features" id="features">
 
-    <div>
+    <div class="features__content">
       <h2 class="features__heading">Features</h2>
       <p class="features__text">Our aim is to make it quick and easy for you to access your favourite websites. Your bookmarks sync between your devices so you can access them on the go.</p>
     </div>
 
-    <div class="features__tabs-wrapper">
-      <!-- TODO buid out tabs here - watch Wes Bos video on Tabs -->
-    </div>
+    <div class="features__tab-wrapper">
+      <div class="features__tabs">
+        <div class="features__tablist" role="tablist" aria-label="Bookmarking Features">
+          <button class="features__tab" id="bookmarking" role="tab" aria-selected="true">Simple Bookmarking</button>
+          <button class="features__tab" id="searching" role="tab" aria-selected="false">Speedy Searching</button>
+          <button class="features__tab" id="sharing" role="tab" aria-selected="false">Easy Sharing</button>
+        </div>
 
-    <div class="features__tab-content-wrapper">
-      <img src="/images/illustration-features-tab-1.svg" alt="Bookmark feature 1 illustration">
+        <div class="features__tabpanel" role="tabpanel" aria-labelledby="bookmarking">
+          <img src="/images/illustration-features-tab-1.svg" alt="Bookmark feature 1 illustration" class="features__tab-image">
 
-      <div>
-        <h3 class="features__tab-heading">Bookmark in one click</h3>
-        <p class="features__tab-text">Organize your bookmarks however you like. Our simple drag-and-drop interface gives you complete control over how you manage your favourite sites.</p>
+          <div>
+            <h3 class="features__tab-heading">Bookmark in one click</h3>
+            <p class="features__tab-text">Organize your bookmarks however you like. Our simple drag-and-drop interface gives you complete control over how you manage your favourite sites.</p>
 
-        <button class="btn--main" type="button">More Info</button>
+            <button class="btn--main" type="button">More Info</button>
+          </div>
+        </div>
+
+        <div class="features__tabpanel" role="tabpanel" aria-labelledby="searching" hidden>
+          <img src="/images/illustration-features-tab-2.svg" alt="Bookmark feature 2 illustration" class="features__tab-image">
+
+          <div>
+            <h3 class="features__tab-heading">Intelligent search</h3>
+            <p class="features__tab-text">  Our powerful search feature will help you find saved sites in no time at all. No need to trawl through all of your bookmarks.</p>
+
+            <button class="btn--main" type="button">More Info</button>
+          </div>
+        </div>
+
+        <div class="features__tabpanel" role="tabpanel" aria-labelledby="sharing" hidden>
+          <img src="/images/illustration-features-tab-3.svg" alt="Bookmark feature 3 illustration" class="features__tab-image">
+
+          <div>
+            <h3 class="features__tab-heading">Share your bookmarks</h3>
+            <p class="features__tab-text">Easily share your bookmarks and collections with others. Create a shareable link that you can send at the click of a button.</p>
+
+            <button class="btn--main" type="button">More Info</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -117,7 +145,7 @@
 
   </section>
 
-  <section class="cta">
+  <section class="cta" id="contact">
 
     <p class="cta__sub-heading">35,000+ Already Joined</p>
     <h2 class="cta__heading">Stay up-to-date with what we're doing</h2>
@@ -133,27 +161,21 @@
 
     <img src="/images/logo-bookmark.svg" alt="Bookmark logo" class="footer__logo">
 
-    <nav>
-
+    <nav class="footer__navbar-wrapper">
+      <ul class="footer__navbar">
+        <li class="footer__navbar-item"><a href="#features" class="footer__navbar-link">Features</a></li>
+        <li class="footer__navbar-item"><a href="#" class="footer__navbar-link">Pricing</a></li>
+        <li class="footer__navbar-item"><a href="#contact" class="footer__navbar-link">Contact</a></li>
+      </ul>
     </nav>
+
+    <div class="footer__social-container">
+      <img src="/images/icon-facebook.svg" alt="Facebook Icon" class="footer__social-icon">
+      <img src="/images/icon-twitter.svg" alt="Twitter Icon" class="footer__social-icon">
+    </div>
 
   </footer>
 
- 
-
-  
-
-  Intelligent search
-
-  Our powerful search feature will help you find saved sites in no time at all. 
-  No need to trawl through all of your bookmarks.
-
-  More Info
-
-  Share your bookmarks
-
-  Easily share your bookmarks and collections with others. Create a shareable 
-  link that you can send at the click of a button.
 
  
 
@@ -189,11 +211,6 @@
   <!-- Answer 4 -->
   Integer condimentum ipsum id imperdiet finibus. Vivamus in placerat mi, at euismod dui. Aliquam 
   vitae neque eget nisl gravida pellentesque non ut velit.
-
-
-  Features
-  Pricing
-  Contact
   
   <footer>
     <p class="attribution">
@@ -201,5 +218,7 @@
       Coded by <a href="#">Your Name Here</a>.
     </p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
