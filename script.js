@@ -1,3 +1,19 @@
+// Mobile Navbar
+const mobileNavbar = document.querySelector('.navbar__wrapper');
+const openNavbar = document.querySelector('.navbar__toggle-open');
+const closeNavbar = mobileNavbar.querySelector('.navbar__toggle-close');
+
+function toggleNavbarOpen(e) {
+    mobileNavbar.classList.remove('hidden');
+}
+
+function toggleNavbarClosed(e) {
+    mobileNavbar.classList.add('hidden');
+}
+
+openNavbar.addEventListener('click', toggleNavbarOpen);
+closeNavbar.addEventListener('click', toggleNavbarClosed);
+
 // Features Tabs
 const tabs = document.querySelector('.features__tabs');
 const tabButtons = tabs.querySelectorAll('[role="tab"]');

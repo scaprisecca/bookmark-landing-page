@@ -5,6 +5,8 @@
     --gray-blue: hsl(229, 8%, 60%);
     --dark-blue: hsl(229, 31%, 21%);
     --rubik: 'Rubik', sans-serif;
+    --toggle-icon-size: 15px;
+    --mobile-nav-width: 80%;
 }
 
 html {
@@ -34,8 +36,12 @@ p {
     font-family: var(--rubik);
 }
 
+a {
+    font-family: var(--rubik);
+}
+
 button {
-    padding: .5rem 1rem;
+    padding: .75rem 1rem;
     border-radius: 4px;
     font-weight: 600;
     font-size: .6rem;
@@ -45,23 +51,150 @@ button {
     background-color: var(--soft-blue);
     color: white;
     border: 1px solid var(--soft-blue);
+    box-shadow: 2px 2px 2px 0 hsl(231, 69%, 85%);
 }
 
 .btn--light {
-    background-color: white;
+    background-color: #fafafa;
     color: var(--dark-blue);
+    border: 1px solid #fafafa;
+    box-shadow: 2px 2px 2px 0 hsl(229, 8%, 80%);
 }
 
 .btn--alt {
     background-color: var(--soft-red);
     color: white;
     border: 1px solid var(--soft-red);
+    box-shadow: 2px 2px 2px 0 hsl(0, 94%, 66%);
+}
+
+.btn--outline {
+    width: var(--mobile-nav-width);
+    text-transform: uppercase;
+    color: white;
+    border: 2px solid white;
+    border-radius: 4px;
+    background-color: transparent;
+    font-size: 1rem;
+    letter-spacing: 2.35px;
+    font-weight: 400;
 }
 
 section {
     --section-spacing: 5rem;
     --x-padding: 1.5rem;
     padding: var(--section-spacing) var(--x-padding);
+}
+
+.hidden {
+    display: none !important;
+}
+
+.divider {
+    width: 100%;
+    height: 1px;
+    background-color: var(--soft-blue);
+    margin: 0;
+}
+
+/* -- Navbar -- */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+}
+
+.navbar__logo {
+    width: 148px;
+    height: 25px;
+}
+
+.navbar__logo path:first-child {
+    fill: white;
+}
+
+.navbar__logo path:last-child {
+    fill: var(--dark-blue);
+}
+
+.navbar__logo circle {
+    fill: white;
+}
+
+.navbar__toggle-open {
+    width: var(--toggle-icon-size);
+    height: var(--toggle-icon-size);
+}
+
+.navbar__wrapper {
+    display: flex;
+    background-color: var(--dark-blue);
+    opacity: 0.95;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 4rem);
+    padding: 2rem 0;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navbar {
+    margin: 0 0 1.5rem;
+    padding: 0;
+    list-style-type: none;
+    width: var(--mobile-nav-width);
+    text-align: center;
+}
+
+.navbar:first-child {
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.navbar__item {
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+    opacity: 1;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.navbar__link {
+    color: white;
+    text-decoration: none;
+}
+
+.navbar__logo-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: var(--mobile-nav-width);
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.navbar__toggle-close {
+    height: var(--toggle-icon-size);
+    width: var(--toggle-icon-size);
+}
+
+.navbar__toggle-close path {
+    fill: white;
+}
+
+.navbar__social-container {
+    margin-top: auto;
+}
+
+.navbar__social-container svg:first-child {
+    margin-right: 2rem;
+}
+
+.navbar__wrapper--desktop {
+    display: none;
 }
 
 /* -- Hero -- */
@@ -84,6 +217,7 @@ section {
 .hero__heading {
     text-align: center;
     color: var(--dark-blue);
+    font-size: 1.75rem;
 }
 
 .hero__text {
@@ -125,7 +259,6 @@ button[role="tab"] {
     color: var(--dark-blue);
 }
 
-/* TODO - may need to put buttons in div, then use red border on bottom of button with the full-width gray border on the div */
 button[aria-selected="true"] {
     border-bottom-color: var(--soft-red);
 }
@@ -156,6 +289,14 @@ button[aria-selected="true"] {
     align-items: center;
 }
 
+.extension__heading {
+    text-align: center;
+}
+
+.extension__text {
+    text-align: center;
+}
+    
 .extension__card-container {
     display: flex;
     flex-direction: column;
@@ -190,7 +331,7 @@ button[aria-selected="true"] {
 }
 
 /* TODO - figure out how to make the dotted spacing work */
-.extension__card-button-container { 
+/* .extension__card-button-container { 
     background-image: linear-gradient(to right, var(--gray-blue) 10%, rgba(255, 255, 255, 0) 0%);
     background-position: top;
     background-size: 10px 5px;
@@ -200,6 +341,12 @@ button[aria-selected="true"] {
     display: flex;
     justify-content: center;
     align-items: center;
+} */
+
+.extension__card-button-container {
+    border-top: 4px dotted rgba(145, 148, 161, 0.5);
+    width: 100%;
+    padding: 1rem 1rem 0;
 }
 
 .extension__card-button-container .btn--main {
@@ -209,6 +356,13 @@ button[aria-selected="true"] {
 
 /* -- FAQ -- */
 
+.faq__heading {
+    text-align: center;
+}
+
+.faq__text {
+    text-align: center;
+}
 
 .faq__accordion-button {
     border: none;
@@ -224,10 +378,7 @@ button[aria-selected="true"] {
     margin-bottom: 1rem;
 }
 
-.faq__accordion-button:after {
-    content: url('/images/icon-arrow.svg');
-    font-size: 15px;
-    color: black;
+.faq__accordion-button svg {
     float: right;
     padding-right: 1rem;
 }
@@ -236,15 +387,15 @@ button[aria-selected="true"] {
     color: var(--soft-red);
 }
 
-.faq__accordion-button--active:after {
-    content: url('/images/icon-close.svg');
-    font-size: 15px;
-    stroke: black;
+/* Arrow icon active state */
+.faq__accordion-button--active svg {
+    transform: rotate(0.5turn);
+    padding-left: 1rem;
+    padding-right: 0;
 }
 
-/* TODO - can you color svg when it's in <object>? */
-.faq__accordion-button object{
-    stroke: black;
+.faq__accordion-button--active path {
+    stroke: var(--soft-red);
 }
 
 .faq__accordion-panel {
@@ -255,6 +406,11 @@ button[aria-selected="true"] {
 
 .faq__accordion-panel p {
     line-height: 35px;
+}
+
+.faq > .btn--main {
+    display: block;
+    margin: 1rem auto 0;
 }
 
 
@@ -310,7 +466,7 @@ footer {
     align-items: center;
 }
 
-.footer__logo path:first-child {
+.footer__logo path {
     fill: #fff;
 }
 
@@ -327,6 +483,10 @@ footer {
 .footer__navbar-item {
     padding: .5rem;
     text-align: center;
+}
+
+.footer__navbar-link:hover {
+    text-decoration: underline;
 }
 
 .footer__navbar-link {
