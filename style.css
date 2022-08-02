@@ -44,7 +44,7 @@ button {
     padding: .75rem 1rem;
     border-radius: 4px;
     font-weight: 600;
-    font-size: .6rem;
+    font-size: .8rem;
 }
 
 .btn--main {
@@ -66,6 +66,8 @@ button {
     color: white;
     border: 1px solid var(--soft-red);
     box-shadow: 2px 2px 2px 0 hsl(0, 94%, 66%);
+    padding: .5rem 2rem;
+    
 }
 
 .btn--outline {
@@ -502,3 +504,167 @@ footer {
 .footer__social-icon:first-of-type {
     margin-right: 2rem;
 }
+
+
+/* ------ Media Queries ------ */
+
+@media (min-width: 768px ) {
+
+    .navbar__toggle-open {
+        display: none;
+    }
+
+    .navbar__wrapper--desktop {
+        display: flex;
+    }
+
+    .navbar--desktop {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        list-style-type: none;
+    }
+
+    .navbar__item--desktop {
+        margin-right: 2rem;
+    }
+
+    .navbar__link--desktop {
+        color: var(--dark-blue);
+        text-decoration: none;
+        font-size: 16px;
+    }
+
+    /* -- Extenstion -- */
+
+    .extension__card-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .extension__text {
+        max-width: 500px;
+        margin-bottom: 3rem;
+    }
+
+    /* -- FAQ -- */
+
+    .faq__text {
+        max-width: 500px;
+        margin: 0 auto 1rem;
+    }
+
+    .faq__accordion-wrapper {
+        max-width: 550px;
+        margin: 0 auto;
+    }
+
+}
+
+@media (min-width: 1000px) {
+
+    .hero {
+        flex-direction: row-reverse;
+        align-items: center;
+    }
+
+    .hero__image {
+        max-width: 500px;
+    }
+
+    .hero__heading {
+        text-align: left;
+        font-size: 2rem;
+    }
+
+    .hero__text {
+        text-align: left;
+    }
+
+    .button__container {
+        justify-content: flex-start;
+    }
+
+    .button__container button:first-child {
+        margin-right: 2rem;
+    }
+
+    /* -- Features -- */
+
+    .features__text {
+        max-width: 500px;
+        margin: 0 auto 18px;
+    }
+
+    .features__tablist {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .features__tablist:first-child {
+        border-top: none;
+    }
+
+    .features__tab {
+        margin-right: 5rem;
+    }
+
+    .features__tab:last-child {
+        margin-right: 0;
+    }
+
+    .features__tabpanel {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+    }
+
+    .features__tab-image {
+        width: 450px;
+        margin-right: 5rem;
+    }
+
+    .features__tabpanel button {
+        visibility: visible;
+    }
+
+    /* -- Extension -- */
+
+    .extension__card:last-child {
+    }
+
+
+    /* -- Footer -- */
+
+    footer {
+        flex-direction: row;
+        padding: 0 5rem;
+    }
+
+    .footer__logo {
+        width: 160px;
+    }
+
+    .footer__navbar-wrapper {
+        margin-left: 2rem;
+    }
+
+    .footer__navbar {
+        display: flex;
+    }
+
+    .footer__social-container {
+        margin-left: auto;
+    }
+
+    .footer__navbar-link {
+        opacity: 0.8;
+    }
+
+}
+
+/* TODO - Add media queries for larger screen sizes */
