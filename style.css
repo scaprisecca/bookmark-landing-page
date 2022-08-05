@@ -15,6 +15,7 @@ html {
 
 body {
     margin: 0;
+    font-family: var(--rubik);
 }
 
 h1,
@@ -50,24 +51,41 @@ button {
 .btn--main {
     background-color: var(--soft-blue);
     color: white;
-    border: 1px solid var(--soft-blue);
+    border: 2px solid var(--soft-blue);
     box-shadow: 2px 2px 2px 0 hsl(231, 69%, 85%);
+    transition: background 250ms ease-in-out;
+}
+
+.btn--main:hover {
+    background-color: white;
+    color: var(--soft-blue);
 }
 
 .btn--light {
     background-color: #fafafa;
     color: var(--dark-blue);
-    border: 1px solid #fafafa;
+    border: 2px solid #fafafa;
     box-shadow: 2px 2px 2px 0 hsl(229, 8%, 80%);
+    transition: border 250ms ease-in-out;
+}
+
+.btn--light:hover {
+    border-color: var(--gray-blue);
 }
 
 .btn--alt {
     background-color: var(--soft-red);
     color: white;
-    border: 1px solid var(--soft-red);
+    border: 2px solid var(--soft-red);
     box-shadow: 2px 2px 2px 0 hsl(0, 94%, 66%);
     padding: .5rem 2rem;
-    
+    transition: background 250ms ease-in-out;
+}
+
+.btn--alt:hover {
+    background-color: white;
+    color: var(--soft-red);
+    box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.2);
 }
 
 .btn--outline {
@@ -83,7 +101,7 @@ button {
 }
 
 section {
-    --section-spacing: 5rem;
+    --section-spacing: 4rem;
     --x-padding: 1.5rem;
     padding: var(--section-spacing) var(--x-padding);
 }
@@ -97,6 +115,14 @@ section {
     height: 1px;
     background-color: var(--soft-blue);
     margin: 0;
+}
+
+.social-icon path {
+    transition: fill 250ms ease-in-out;
+}
+
+.social-icon path:hover {
+    fill: var(--soft-red);
 }
 
 /* -- Navbar -- */
@@ -197,6 +223,11 @@ header {
 
 .navbar__wrapper--desktop {
     display: none;
+    transition: color 250ms ease-in-out;
+}
+
+.navbar__link--desktop:hover {
+    color: var(--soft-red);
 }
 
 /* -- Hero -- */
@@ -206,8 +237,25 @@ header {
     flex-direction: column;
 }
 
+.hero__image-container {
+    position: relative;
+    margin-bottom: 2.5rem;
+}
+
 .hero__image {
     max-width: 100%;
+    z-index: 2;
+}
+
+.hero__blue-shape {
+    width: 75%;
+    height: 75%;
+    background-color: var(--soft-blue);
+    position: absolute;
+    right: -32px;
+    bottom: 0;
+    border-bottom-left-radius: 30%;
+    z-index: -1;
 }
 
 .hero__content {
@@ -259,6 +307,11 @@ button[role="tab"] {
     padding: 1rem 0;
     font-size: 18px;
     color: var(--dark-blue);
+    transition: color 250ms ease-in-out, border 250ms ease-in-out;
+}
+
+button[role="tab"]:hover {
+    color: var(--soft-red);
 }
 
 button[aria-selected="true"] {
@@ -273,13 +326,30 @@ button[aria-selected="true"] {
     text-align: center;
 }
 
+.features__tab-image-container {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
 .features__tab-image {
     max-width: 100%;
     margin-bottom: 3rem;
+    z-index: 2;
+}
+
+.features__tab-blue-shape {
+    width: 80%;
+    height: 79%;
+    background-color: var(--soft-blue);
+    position: absolute;
+    left: -27px;
+    bottom: 20px;
+    border-bottom-right-radius: 30%;
+    z-index: -1;
 }
 
 .features__tabpanel button {
-    visibility: hidden;
+    display: none;
 }
 
 
@@ -312,7 +382,7 @@ button[aria-selected="true"] {
     padding: 1rem;
     border: 1px solid rgba(145, 148, 161, 0.1);
     border-radius: 8px;
-    box-shadow: 5px 5px 3px 0 rgba(145, 148, 161, 0.2);
+    box-shadow: 0 5px 3px 0 rgba(83, 104, 223, 0.15);
 }
 
 .extension__card-image {
@@ -333,22 +403,16 @@ button[aria-selected="true"] {
 }
 
 /* TODO - figure out how to make the dotted spacing work */
-/* .extension__card-button-container { 
-    background-image: linear-gradient(to right, var(--gray-blue) 10%, rgba(255, 255, 255, 0) 0%);
+.extension__card-button-container { 
+    background-image: linear-gradient(to right, var(--gray-blue) 10%, rgba(255, 255, 255, 0) 15%);
     background-position: top;
-    background-size: 10px 5px;
+    background-size: 18px 3px;
     background-repeat: repeat-x;
     width: 100%;
     padding: 1rem 1rem 0;
     display: flex;
     justify-content: center;
     align-items: center;
-} */
-
-.extension__card-button-container {
-    border-top: 4px dotted rgba(145, 148, 161, 0.5);
-    width: 100%;
-    padding: 1rem 1rem 0;
 }
 
 .extension__card-button-container .btn--main {
@@ -378,15 +442,16 @@ button[aria-selected="true"] {
     font-weight: 500;
     color: var(--dark-blue);
     margin-bottom: 1rem;
+    transition: color 250ms ease-in-out;
+}
+
+.faq__accordion-button:hover {
+    color: var(--soft-red);
 }
 
 .faq__accordion-button svg {
     float: right;
     padding-right: 1rem;
-}
-
-.faq__accordion-button--active {
-    color: var(--soft-red);
 }
 
 /* Arrow icon active state */
@@ -403,7 +468,7 @@ button[aria-selected="true"] {
 .faq__accordion-panel {
     border-bottom: 1px solid var(--gray-blue);
     display: none;
-    transition: max-height 0.2s ease-out;
+    transition: all 3s ease-out;
 }
 
 .faq__accordion-panel p {
@@ -439,7 +504,12 @@ button[aria-selected="true"] {
 }
 
 .cta__contact-container {
-    max-width: 90%;
+    width: 90%;
+}
+
+.cta__contact-container div {
+    width: 100%;
+    margin-bottom: 1rem;
 }
 
 .cta__input {
@@ -448,7 +518,26 @@ button[aria-selected="true"] {
     border: 1px solid white;
     border-radius: 4px;
     padding-left: 20px;
-    margin-bottom: 1rem;
+}
+
+.cta__input--error {
+    border-color: var(--soft-red);
+}
+
+.cta__input--error::after {
+    content: url('/images/icon-error.svg');
+    background-color: black;
+}
+
+.cta__error-message {
+    display: inline-block;
+    background-color: var(--soft-red);
+    color: white;
+    width: calc(100% - 20px);
+    padding: 7px 10px;
+    font-size: 14px;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
 }
 
 .cta__contact-container button {
@@ -488,7 +577,7 @@ footer {
 }
 
 .footer__navbar-link:hover {
-    text-decoration: underline;
+    color: var(--soft-red);
 }
 
 .footer__navbar-link {
@@ -499,6 +588,7 @@ footer {
     font-weight: 400;
     font-size: 16px;
     letter-spacing: 3px;
+    transition: color 250ms ease-in-out;
 }
 
 .footer__social-icon:first-of-type {
@@ -536,6 +626,34 @@ footer {
         font-size: 16px;
     }
 
+    /* -- Hero -- */
+
+    .hero__content {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    /* -- Features -- */
+
+    .features__tab-blue-shape {
+        width: 65%;
+    }
+
+    .features__content {
+        max-width: 500px;
+        margin: 0 auto 45px;
+    }
+
+    .features__tablist {
+        max-width: 500px;
+        margin: 0 auto 5rem;
+    }
+
+    .features__tab-content {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
     /* -- Extenstion -- */
 
     .extension__card-container {
@@ -565,13 +683,22 @@ footer {
 
 @media (min-width: 1000px) {
 
+    section {
+        --section-spacing: 5rem;
+    }
+
     .hero {
         flex-direction: row-reverse;
         align-items: center;
+        justify-content: space-around;
     }
 
     .hero__image {
         max-width: 500px;
+    }
+
+    .hero__content {
+        max-width: 450px;
     }
 
     .hero__heading {
@@ -593,19 +720,33 @@ footer {
 
     /* -- Features -- */
 
-    .features__text {
-        max-width: 500px;
-        margin: 0 auto 18px;
+    .features__content {
+        max-width: 600px;
     }
 
     .features__tablist {
         flex-direction: row;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
+        border-bottom: 1px solid var(--gray-blue);
+        max-width: 720px;
     }
 
     .features__tablist:first-child {
         border-top: none;
+    }
+
+    button[role="tab"] {
+        border-bottom: none;
+        margin-right: 0;
+    }
+
+    button[role="tab"]:hover {
+        border-bottom: 3px solid var(--soft-red);
+    }
+    
+    button[aria-selected="true"] {
+        border-bottom: 3px solid var(--soft-red);
     }
 
     .features__tab {
@@ -620,7 +761,12 @@ footer {
         display: flex;
         flex-direction: row;
         align-items: center;
+        justify-content: space-around;
         text-align: left;
+    }
+
+    .features__tab-content {
+        max-width: 450px;
     }
 
     .features__tab-image {
@@ -629,14 +775,39 @@ footer {
     }
 
     .features__tabpanel button {
-        visibility: visible;
+        display: inline-block;
     }
 
     /* -- Extension -- */
 
-    .extension__card:last-child {
+    .extension__card {
+        max-height: 325px;
     }
 
+    .extension__card:nth-child(2) {
+        margin-top: 1.5rem;
+    }
+
+    .extension__card:last-child {
+        margin-top: 3rem;
+    }
+
+    /* -- CTA -- */
+
+    .cta__contact-container {
+        max-width: 500px;
+        width: 100%;
+        display: flex;
+    }
+
+    .cta__input {
+        margin-right: 1rem;
+        flex: 1;
+    }
+
+    .cta__contact-container button {
+        width: auto;
+    }
 
     /* -- Footer -- */
 
@@ -668,3 +839,46 @@ footer {
 }
 
 /* TODO - Add media queries for larger screen sizes */
+
+@media (min-width: 1250px) {
+
+    .hero {
+        justify-content: space-evenly;
+    }
+    
+    .hero__content {
+        margin: 0;
+    }
+
+    /* -- Features -- */
+
+    .features__tabpanel {
+        justify-content: space-evenly;
+    }
+
+    .features__tab-content {
+        margin: 0;
+    }
+}
+
+@media (min-width: 1920px) {
+
+    .hero {
+        justify-content: center;
+    }
+
+    .hero__content {
+        margin-right: 7rem;
+    }
+
+    /* -- Features -- */
+
+    .features__tabpanel {
+        justify-content: center;
+    }
+
+    .features__tab-content {
+        margin-left: 7rem;
+    }
+
+}

@@ -21,18 +21,20 @@ const tabPanels = Array.from(tabs.querySelectorAll('[role="tabpanel"'));
 
 function handleTabClick(event) {
     // make all panels hidden
-    tabPanels.forEach(panel => (panel.hidden = true));
+    tabPanels.forEach(panel => panel.classList.add('hidden'));
+
     // mark all buttons as unselected
     tabButtons.forEach(button => {
         button.setAttribute('aria-selected', false);
     });
+
     // mark the clicked tab as selected
     event.currentTarget.setAttribute('aria-selected', true);
 
     //find associated tabpanel and show it
     const { id } = event.currentTarget;
     const tabPanel = tabPanels.find(panel => panel.getAttribute('aria-labelledby') === id);
-    tabPanel.hidden = false;
+    tabPanel.classList.remove('hidden');
 }
 
 tabButtons.forEach(button => button.addEventListener('click', handleTabClick));
@@ -56,3 +58,21 @@ function handleAccordionClick(event) {
 }
 
 accordionButtons.forEach(button => button.addEventListener('click', handleAccordionClick));
+
+// Validate Email Address
+
+const mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+const email = document.querySelector('.cta__input');
+const emailButton = document.querySelector('.cta__contact-container .btn--alt');
+const emailErrorMessage = document.querySelector('.cta__error-message');
+
+function validateEmail(e) {
+    e.preventDefault;
+    console.log(e.currentTarget);
+    console.log(email.value);
+    if (!email.value.match(mailformat)) {
+        emailErrorMessage.classList.remove('hidden');
+    }
+}
+
+emailButton.addEventListener('click', validateEmail);
